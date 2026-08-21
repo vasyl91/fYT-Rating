@@ -1,3 +1,4 @@
+<meta name="google-site-verification" content="-XUF0jTsf5372cPYBGoyRyzonh9E99cXOh94yGa97w4" />
 # fYT Rating
 
 Read and change the like status of a YouTube video from another application.
