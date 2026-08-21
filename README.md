@@ -1,4 +1,6 @@
-<meta name="google-site-verification" content="-XUF0jTsf5372cPYBGoyRyzonh9E99cXOh94yGa97w4" />
+<head>
+  <meta name="google-site-verification" content="..." />
+</head>
 
 # fYT Rating
 
