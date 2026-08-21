@@ -71,8 +71,8 @@ A caller sends a broadcast with the video id, a `PendingIntent` proving its
 identity, and a `PendingIntent` for the reply.
 
 ```java
-Intent request = new Intent("vasyl.ytrating.action.GET_RATING");
-request.setPackage("vasyl.ytrating");
+Intent request = new Intent("vasyl.fytrating.action.GET_RATING");
+request.setPackage("vasyl.fytrating");
 request.putExtra("video_id", "dQw4w9WgXcQ");
 
 // Identity. Never sent, only inspected: the system records the creator of a
@@ -89,7 +89,7 @@ context.sendBroadcast(request);
 ```
 
 The reply carries `video_id`, `rating` (`like`, `dislike` or `none`) and, on
-failure, `error`. Use `vasyl.ytrating.action.SET_RATING` with `rating` set to
+failure, `error`. Use `vasyl.fytrating.action.SET_RATING` with `rating` set to
 change it.
 
 Error values: `not_allowed`, `not_signed_in`, `bad_request`, `unavailable`,
@@ -120,7 +120,7 @@ Standard Android project; no dependencies beyond the framework.
 ```
 
 To run your own build against Google, register an OAuth client of type
-**Android** in the Google Cloud console for the package `vasyl.ytrating` with
+**Android** in the Google Cloud console for the package `vasyl.fytrating` with
 your signing certificate's SHA-1 fingerprint, and enable the **YouTube Data API
 v3**. No credential is copied into the source: Google identifies the application
 by its package name and certificate.
