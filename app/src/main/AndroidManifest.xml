@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="vasyl.fytrating">
+
+    <!--
+        The only permission needed. Notably absent: GET_ACCOUNTS, because the
+        account is chosen by the user in a picker drawn by Google Play services
+        and this application never enumerates the accounts on the device.
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Base.Theme.fYTRating">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".AllowedAppsActivity"
+            android:exported="false"
+            android:label="@string/allowed_apps" />
+
+        <!--
+            Exported on purpose: this is how other applications ask about a
+            rating. Access is not granted by being able to send the broadcast -
+            the receiver identifies the caller through the creator of a
+            PendingIntent, which cannot be forged, and answers only packages the
+            user has added to the allow list.
+        -->
+        <receiver
+            android:name=".RatingBridgeReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="vasyl.fytrating.action.GET_RATING" />
+                <action android:name="vasyl.fytrating.action.SET_RATING" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
