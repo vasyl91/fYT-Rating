@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>fYT Rating</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+         font: 16px/1.65 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         color: #24292f; }
+  h1 { font-size: 2rem; margin-bottom: .25rem; }
+  h2 { margin-top: 2.25rem; padding-bottom: .3rem; border-bottom: 1px solid #d8dee4; }
+  h3 { margin-top: 1.5rem; }
+  code { background: #f6f8fa; padding: .15em .35em; border-radius: 4px; font-size: .9em; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { border: 1px solid #d8dee4; padding: .5rem .7rem; text-align: left; }
+  th { background: #f6f8fa; }
+  .lead { font-size: 1.1rem; color: #57606a; margin-top: 0; }
+  .nav a { margin-right: 1rem; }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #d8dee4;
+           color: #57606a; font-size: .9rem; }
+</style>
+</head>
+<body>
+
+<h1>fYT Rating</h1>
+<p class="lead">Read and change the like status of a YouTube video from your car
+head unit or another app on your device.</p>
+
+<p><strong>fYT Rating</strong> is a free, open-source Android application that
+shows whether you have liked a YouTube video and lets you like or unlike it,
+using your own Google account.</p>
+
+<p>It also answers the same two questions for other applications on your device
+that you have explicitly allowed. That is what it was built for: a car head unit
+launcher, a home screen widget or a steering wheel remote can display and change
+your rating without having to handle Google sign-in itself.</p>
+
+<h2>What it does</h2>
+<ul>
+  <li>Sign in with your Google account, once</li>
+  <li>Paste a video id or a YouTube link and see its thumbnail, title and your rating</li>
+  <li>Like or unlike the video with one tap</li>
+  <li>Allow chosen applications on your device to do the same on your behalf</li>
+</ul>
+
+<h2>Why it exists</h2>
+<p>YouTube does not tell other applications whether the video playing is liked.
+It publishes no rating to the Android media session, so anything outside the
+YouTube app is blind to it. The only reliable source is the YouTube Data API,
+which requires the account owner's authorisation.</p>
+
+<p>Rather than have every launcher and widget ask for that authorisation
+separately, fYT Rating asks once and answers on their behalf — but only for
+applications you have added by hand.</p>
+
+<h2>What it does with your Google account</h2>
+<p>fYT Rating requests a single permission,
+<code>https://www.googleapis.com/auth/youtube.force-ssl</code>, and uses it for
+exactly two YouTube Data API calls:</p>
+
+<table>
+  <tr><th>Call</th><th>Purpose</th></tr>
+  <tr><td><code>videos.getRating</code></td><td>reads your rating of a video, so it can be shown</td></tr>
+  <tr><td><code>videos.rate</code></td><td>sets your rating when you ask it to</td></tr>
+</table>
+
+<p>The narrower read-only permission cannot be used, because
+<code>videos.getRating</code> returns the signed-in user's own rating and rejects
+it.</p>
+
+<p>Sign-in is handled by Google Play services through Android's standard account
+picker. The application never sees or asks for your password.</p>
+
+<h2>What it does with your data</h2>
+<p>Nothing leaves your device except those two API calls to Google, made on your
+behalf. There is no server behind this application, no analytics, no advertising,
+and no data is shared with anyone.</p>
+
+<p>The only things stored on the device are the address of the connected
+account, the channel name shown next to it, and the list of applications you
+have allowed. Signing out removes the first two and revokes the authorisation at
+Google, so the application disappears from your account's connected apps.</p>
+
+<h2>Privacy and terms</h2>
+<p class="nav">
+  <a href="PRIVACY.html">Privacy Policy</a>
+  <a href="TERMS.html">Terms of Service</a>
+</p>
+
+<h2>Source code and downloads</h2>
+<p>The application is open source. The code, releases and technical
+documentation are on
+<a href="https://github.com/vasyl91/fYT-Rating">GitHub</a>.</p>
+
+<h2>Contact</h2>
+<p>Questions and problems can be raised as an
+<a href="https://github.com/vasyl91/fYT-Rating/issues">issue</a> in the
+repository.</p>
+
+<footer>
+fYT Rating is an independent project. It is not affiliated with, endorsed by or
+sponsored by Google LLC or YouTube.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Privacy Policy - fYT Rating</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+         font: 16px/1.65 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         color: #24292f; }
+  h1 { font-size: 2rem; margin-bottom: .25rem; }
+  h2 { margin-top: 2.25rem; padding-bottom: .3rem; border-bottom: 1px solid #d8dee4; }
+  h3 { margin-top: 1.5rem; }
+  code { background: #f6f8fa; padding: .15em .35em; border-radius: 4px; font-size: .9em; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { border: 1px solid #d8dee4; padding: .5rem .7rem; text-align: left; }
+  th { background: #f6f8fa; }
+  .lead { font-size: 1.1rem; color: #57606a; margin-top: 0; }
+  .nav a { margin-right: 1rem; }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #d8dee4;
+           color: #57606a; font-size: .9rem; }
+</style>
+</head>
+<body>
+
+<p class="nav"><a href="index.html">&larr; fYT Rating</a></p>
+
+<h1>Privacy Policy</h1>
+<p class="lead">fYT Rating &middot; Last updated: 21 August 2026</p>
+
+<p>fYT Rating is a free, open-source Android application that reads and changes
+the like status of YouTube videos on the signed-in user's own account. This
+policy describes what it does with personal data.</p>
+
+<h2>Summary</h2>
+<p>The application has no server and no backend of its own. It collects no
+analytics, contains no advertising, and shares no data with anyone. The only
+external service it contacts is the YouTube Data API, on the user's behalf and
+only after the user has authorised it.</p>
+
+<h2>The data the application handles</h2>
+
+<h3>Google account data</h3>
+<p>If the user signs in, the application can read and set the rating of a
+YouTube video on that account. It requests a single scope,
+<code>https://www.googleapis.com/auth/youtube.force-ssl</code>, and uses it for
+exactly two YouTube Data API calls:</p>
+<ul>
+  <li><code>videos.getRating</code> — reads the signed-in user's rating of a
+      video, so it can be displayed</li>
+  <li><code>videos.rate</code> — sets that rating when the user, or an
+      application the user has allowed, asks for it</li>
+</ul>
+<p>The narrower read-only scope cannot be used: <code>videos.getRating</code>
+returns the user's own rating and rejects it.</p>
+
+<p>Authorisation is delegated to Google Play services through Android's standard
+<code>AccountManager</code>. The user chooses the account and approves the
+consent screen drawn by the system. The application never receives, requests or
+stores a password, and no client secret is embedded in it. Access tokens are
+managed by Google Play services and are not written to storage by this
+application.</p>
+
+<h3>What is stored on the device</h3>
+<p>In the application's private storage, and nowhere else:</p>
+<ul>
+  <li>the address of the connected account</li>
+  <li>the channel name associated with it, used only to show which account is connected</li>
+  <li>the list of applications the user has allowed to use the bridge</li>
+  <li>the list of applications that have requested access and been refused, so
+      the user can decide about them</li>
+</ul>
+<p>All of it is removed when the user signs out, except the allow list, which the
+user manages directly.</p>
+
+<h3>What is not collected</h3>
+<p>The application does not collect names, contacts, messages, browsing or watch
+history, files, photographs, location, device identifiers or any identifier used
+for tracking or advertising. It does not build profiles and does not sell data,
+because it transmits none.</p>
+<p>Video titles and thumbnails fetched for display are held in memory only and
+are not stored.</p>
+
+<h2>Other applications on the device</h2>
+<p>fYT Rating can answer rating requests from other applications so they do not
+have to request Google authorisation themselves.</p>
+<p>No application is allowed by default. A request from an application the user
+has not explicitly allowed is refused. The identity of a caller is established
+from the creator of an Android <code>PendingIntent</code>, which is recorded by
+the operating system and cannot be forged by the caller.</p>
+<p>An allowed application can ask for the rating of a video and can change it. It
+receives no account credentials, no access token, and no information about the
+account beyond the ratings it asks about. Access can be withdrawn at any time in
+<em>Allowed applications</em>.</p>
+
+<h2>Third-party services</h2>
+<p>The YouTube Data API is the only external service contacted, and only while
+the user is signed in. Those requests are governed by
+<a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
+<p>Video thumbnails are loaded from Google's public thumbnail host. No account
+information is sent with those requests.</p>
+
+<h2>Withdrawing consent</h2>
+<p>Access can be withdrawn in two ways, and either is sufficient:</p>
+<ul>
+  <li>in the application, by signing out — this also revokes the authorisation
+      at Google, so the application disappears from the account's connected
+      apps</li>
+  <li>at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a></li>
+</ul>
+<p>After withdrawal the application can no longer read or change any rating.</p>
+
+<h2>Data retention</h2>
+<p>Nothing is retained anywhere but the device. Signing out removes the stored
+account address and channel name immediately. Uninstalling the application
+removes everything it stored.</p>
+
+<h2>Children</h2>
+<p>The application is not directed at children and collects no data from them.</p>
+
+<h2>Changes to this policy</h2>
+<p>Changes are published on this page, with the date at the top updated.
+Material changes will also be noted in the release notes.</p>
+
+<h2>Contact</h2>
+<p>Questions and requests can be raised as an
+<a href="https://github.com/vasyl91/fYT-Rating/issues">issue</a> in the project
+repository, or sent to the support address shown on the Google consent
+screen.</p>
+
+</body>
+</html>
