@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>fYT Rating</title>
+  <meta name="description" content="fYT Rating shows whether you have liked a YouTube video and lets you like or unlike it using your own Google account.">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --text: #171717;
+      --muted: #5f6368;
+      --card: #f7f7f8;
+      --border: #e5e5e7;
+      --link: #0b57d0;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121212;
+        --text: #f1f3f4;
+        --muted: #bdc1c6;
+        --card: #1e1f20;
+        --border: #303134;
+        --link: #8ab4f8;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background: var(--bg);
+      color: var(--text);
+    }
+    main {
+      width: min(760px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 72px 0 56px;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2.2rem, 6vw, 3.5rem);
+      line-height: 1.1;
+    }
+    h2 {
+      margin-top: 40px;
+      font-size: 1.35rem;
+    }
+    p { margin: 0 0 18px; }
+    .tagline {
+      font-size: 1.2rem;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      margin: 28px 0;
+    }
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 36px;
+    }
+    footer {
+      margin-top: 56px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>fYT Rating</h1>
+      <p class="tagline">
+        Check and control your YouTube video ratings using your own Google account.
+      </p>
+    </header>
+
+    <section>
+      <h2>About fYT Rating</h2>
+      <p>
+        fYT Rating shows whether you have liked a YouTube video and lets you
+        like or unlike it, using your own Google account.
+      </p>
+      <p>
+        It can also answer rating requests from other apps on your device that
+        you explicitly allow, so a launcher or widget can display and control
+        your rating without handling Google sign-in itself.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>How it works</h2>
+      <p>
+        fYT Rating uses your Google account to access your YouTube rating
+        information. Authentication is performed by Google. The application
+        does not ask you to provide your Google password to fYT Rating.
+      </p>
+      <p>
+        Requests from other apps are supported only when you explicitly allow
+        those apps to use the functionality.
+      </p>
+    </section>
+
+    <section>
+      <h2>Legal information</h2>
+      <p>
+        Please review the application's privacy policy and terms of service
+        before using fYT Rating.
+      </p>
+      <nav aria-label="Legal">
+        <a href="PRIVACY.html">Privacy Policy</a>
+        <a href="TERMS.html">Terms of Service</a>
+      </nav>
+    </section>
+
+    <footer>
+      <p>fYT Rating</p>
+    </footer>
+  </main>
+</body>
+</html>
