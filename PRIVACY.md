@@ -1,5 +1,7 @@
+---
 layout: default
 title: Privacy Policy - fYT Rating
+---
 
 # Privacy Policy
 

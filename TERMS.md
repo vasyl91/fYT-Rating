@@ -1,5 +1,7 @@
+---
 layout: default
-title: Terms of Service - fYT Rating
+title: Privacy Policy - fYT Rating
+---
 
 # Terms of Service
 
