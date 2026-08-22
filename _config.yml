@@ -1,0 +1,10 @@
+title: fYT Rating
+description: >-
+  Read and change the like status of a YouTube video from your car head unit
+  or another app on your device.
+theme: jekyll-theme-cayman
+
+# Keep the verification file and the documents as they are.
+include:
+  - PRIVACY.md
+  - TERMS.md

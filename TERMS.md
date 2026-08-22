@@ -1,3 +1,6 @@
+layout: default
+title: Terms of Service - fYT Rating
+
 # Terms of Service
 
 **fYT Rating**
