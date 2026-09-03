@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">fYT Rating</string>
+
+    <!-- Account -->
+    <string name="account_not_connected">Not connected</string>
+    <string name="account_connected">Connected as %1$s</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_out">Sign out</string>
+    <string name="sign_out_message">Sign out of %1$s?</string>
+    <string name="signed_in_as">Signed in as %1$s</string>
+    <string name="sign_in_failed">Sign in failed: %1$s</string>
+    <string name="sign_in_first">Sign in first</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="no_account_provider">Google Play services are not available on this device</string>
+
+    <!-- Video -->
+    <string name="video_hint">Video ID or YouTube link</string>
+    <string name="check">Check</string>
+    <string name="loading">Loading…</string>
+    <string name="unknown_title">Title unavailable</string>
+    <string name="rating_liked">You liked this video</string>
+    <string name="rating_not_liked">You have not liked this video</string>
+    <string name="rating_unavailable">The rating could not be read</string>
+    <string name="rating_made_for_kids">YouTube reports no rating for videos made for kids</string>
+    <string name="rating_failed">The rating could not be changed</string>
+    <string name="like">Like</string>
+    <string name="bad_video_id">Incorrect ID</string>
+    <string name="thumbnail_description">Video thumbnail</string>
+
+    <!-- Allowed applications -->
+    <string name="allowed_apps">Allowed applications</string>
+    <string name="allowed_header">Allowed to read and change ratings</string>
+    <string name="allowed_empty">No application is allowed yet. An application that asks will appear below.</string>
+    <string name="pending_header">Asked for access</string>
+    <string name="allow_title">Allow access</string>
+    <string name="allow_message">Let %1$s (%2$s) read and change the rating of videos on your account?</string>
+    <string name="revoke_title">Remove access</string>
+    <string name="revoke_message">Stop answering requests from %1$s?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+</resources>

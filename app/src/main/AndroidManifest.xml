@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="vasyl.fytrating">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.Material3.DayNight.NoActionBar">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".AllowedAppsActivity"
+            android:exported="false"
+            android:label="@string/allowed_apps" />
+
+        <!--
+            Exported on purpose: this is how other applications ask about a
+            rating. Access is not granted by being able to send the broadcast -
+            the receiver identifies the caller through the creator of a
+            PendingIntent, which cannot be forged, and answers only packages the
+            user has added to the allow list.
+        -->
+
+        <activity
+            android:name=".WakeActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.NoDisplay" />
+
+        <receiver
+            android:name=".RatingBridgeReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="vasyl.fytrating.action.GET_RATING" />
+                <action android:name="vasyl.fytrating.action.SET_RATING" />
+                <action android:name="vasyl.fytrating.action.GET_STATUS" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
